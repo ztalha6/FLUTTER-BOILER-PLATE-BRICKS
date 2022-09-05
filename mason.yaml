@@ -1,0 +1,33 @@
+# Register bricks which can be consumed via the Mason CLI.
+# https://github.com/felangel/mason
+bricks:
+  # Sample Brick
+  # Run `mason make hello` to try it out.
+  hello: 0.1.0+1
+  api_service:
+    path: bricks/api_service
+  exception_handler:
+    path: bricks/exception_handler
+  basic_setup:
+    path: bricks/basic_setup
+  snackbar_manager:
+    path: bricks/snackbar_manager
+  env:
+    path: bricks/env
+  models:
+    path: bricks/models
+  constants:
+    path: bricks/constants
+  utils:
+    path: bricks/utils
+  token_manager:
+    path: bricks/token_manager
+  widgets:
+    path: bricks/widgets
+  # Bricks can also be imported via git url.
+  # Uncomment the following lines to import
+  # a brick from a remote git url.
+  # widget:
+  #   git:
+  #     url: https://github.com/felangel/mason.git
+  #     path: bricks/widget
