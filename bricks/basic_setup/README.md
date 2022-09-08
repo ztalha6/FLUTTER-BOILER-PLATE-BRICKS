@@ -1,10 +1,10 @@
-# Basic Setup
+# ⚡ Basic Setup
 
 A brick to create the basic structure for the API Integration and Beta setup foran application. This brick will create  a massive structure on your directory and genrates some ready to use code.
 
 All you have to do is to call the mehtods in controllers and do business logic stuff.
 
-## Features
+## 💫 Features
 This brick will create following modules for you:
 - Constants
     - api constants file
