@@ -1,10 +1,11 @@
 name: basic_setup
-description: A new brick created with the Mason CLI.
+description: A brick to create the basic structure for the API Integration and Beta setup for an application.
 
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 0.1.0+1
+version: 0.1.0+2
+repository: https://github.com/ztalha6/FLUTTER-BOILER-PLATE-BRICKS/tree/master/bricks/basic_setup
 
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
