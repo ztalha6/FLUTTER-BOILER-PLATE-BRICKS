@@ -12,7 +12,7 @@ This brick will create following modules for you:
 ## How to use 🚀
 
 ```
-mason make basic_setup
+mason make token_manager
 ```
 
 ## Outputs 📦
