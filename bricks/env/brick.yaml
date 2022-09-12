@@ -1,11 +1,11 @@
 name: env
-description: A new brick created with the Mason CLI.
+description: A brick to create Environment instances for your Dart and Flutter projects.
 
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
 version: 0.1.0+1
-
+repository: https://github.com/ztalha6/FLUTTER-BOILER-PLATE-BRICKS/tree/master/bricks/env
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
 environment:
