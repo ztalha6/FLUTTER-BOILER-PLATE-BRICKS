@@ -24,6 +24,8 @@ bricks:
     path: bricks/token_manager
   widgets:
     path: bricks/widgets
+  app_essentials:
+    path: bricks/app_essentials
   # Bricks can also be imported via git url.
   # Uncomment the following lines to import
   # a brick from a remote git url.
