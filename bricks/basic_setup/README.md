@@ -87,87 +87,37 @@ widgets
 
 ```
 
+## Dependencies
+
+This setup is dependent on the following packages. You always add or remove as per your requirements. To avoid any error in code copy the following dependencies and add it in your pubspec.yaml file.
+
 ```dart
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
 
-class DioBuilderResponse {
-  Dio dio;
-  Options dioOptions;
+  cached_network_image: ^3.3.0
+  carousel_slider: ^4.2.1
+  cupertino_icons: ^1.0.2
+  dio: ^5.3.3
+  dio_cache_interceptor: ^3.4.4
+  dropdown_button2: ^1.7.2
+  flutter:
+    sdk: flutter
+  flutter_facebook_auth: ^6.0.2
+  flutter_staggered_animations: ^1.1.1
+  get: 4.6.5
+  google_fonts: ^6.1.0
+  google_sign_in: ^6.1.5
+  image_cropper: ^5.0.0
+  image_picker: ^1.0.4
+  intl: ^0.18.1
+  intl_phone_number_input: ^0.7.3+1
+  package_info_plus: ^4.2.0
+  pin_code_fields: ^8.0.1
+  pull_to_refresh: ^2.0.0
+  shared_preferences: ^2.2.2
+  shimmer: ^3.0.0
+  sign_in_with_apple: ^5.0.0
+  sizer: ^2.0.15
+  video_player: ^2.7.2
 
-  DioBuilderResponse({required this.dio, required this.dioOptions});
-}
-
-class DioBuilder {
-  Options _getCachedDioOptions() {
-    return buildCacheOptions(
-      const Duration(days: 30),
-      forceRefresh: true,
-      options: Options(
-        followRedirects: false,
-        validateStatus: (status) {
-          return status! < 501;
-        },
-      ),
-    );
-  }
-
-  Future<DioBuilderResponse> buildCachedDio({
-    bool hasAuth = true,
-    bool shouldQueue = false,
-  }) async {
-    DioCacheManager dioCacheManager = DioCacheManager(CacheConfig());
-    Options dioOptions = _getCachedDioOptions();
-    String token = await TokenManager().getToken();
-    Dio dio = Dio(BaseOptions(
-        baseUrl: Env.currentEnv.baseUrl,
-        connectTimeout: 15000,
-        receiveTimeout: 15000,
-        headers: hasAuth
-            ? {
-                'Authorization': 'Bearer $token',
-                'Content-Type': 'application/json',
-              }
-            : {
-                'Content-Type': 'application/json',
-              }));
-    dio.interceptors.add(DioInterceptor(dio));
-    dio.interceptors.add(dioCacheManager.interceptor);
-    if (shouldQueue) dio.interceptors.add(QueuedInterceptor());
-    return DioBuilderResponse(dio: dio, dioOptions: dioOptions);
-  }
-
-  Future<DioBuilderResponse> buildNonCachedDio({
-    bool hasAuth = true,
-    bool shouldQueue = false,
-  }) async {
-    Options dioOptions = _getDioOptions();
-    String token = await TokenManager().getToken();
-    Dio dio = Dio(BaseOptions(
-        baseUrl: Env.currentEnv.baseUrl,
-        connectTimeout: 15000,
-        receiveTimeout: 15000,
-        headers: hasAuth
-            ? {
-                'Authorization': 'Bearer $token',
-                'Content-Type': 'application/json',
-              }
-            : {
-                'Content-Type': 'application/json',
-              }));
-    dio.interceptors.add(DioInterceptor(dio));
-    if (shouldQueue) dio.interceptors.add(QueuedInterceptor());
-    return DioBuilderResponse(dio: dio, dioOptions: dioOptions);
-  }
-
-  Options _getDioOptions() {
-    return Options(
-      followRedirects: false,
-      validateStatus: (status) {
-        return status! < 501;
-      },
-    );
-  }
-}
 
 ```
