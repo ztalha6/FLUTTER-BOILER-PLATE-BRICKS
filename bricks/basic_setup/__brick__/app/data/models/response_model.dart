@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import '../services/dio_service/api_interceptor.dart';
+
+import 'api_response_handler.dart';
 
 enum ResponseStatus {
   nullResponse,
@@ -22,47 +23,9 @@ class ResponseModel<T> {
   ) async {
     try {
       final Response apiResponse = await apiCall();
-      return handleResponse<T>(parser, apiResponse);
-    } on DioError {
+      return ApiResponseHandler<T>(parser, apiResponse).handleResponse();
+    } on DioException {
       rethrow;
-    }
-  }
-
-  static ResponseModel<T> handleResponse<T extends BaseApiResponse>(
-    T Function(Map<String, dynamic> body) parser,
-    Response apiResponse,
-  ) {
-    final T response = parser(apiResponse.data as Map<String, dynamic>);
-
-    if (apiResponse.headers.value("x-auth-error") == "InvalidCredentials") {
-      return ResponseModel<T>(
-        status: ResponseStatus.responseError,
-        response: response,
-        error: response.message,
-      );
-    }
-    if (apiResponse.statusCode == 401) {
-      throw UnauthorizedException(apiResponse.requestOptions);
-    }
-    if ((apiResponse.statusCode! < 300 && apiResponse.statusCode! >= 200) ||
-        apiResponse.statusCode == 500) {
-      if (!response.status!) {
-        return ResponseModel<T>(
-          status: ResponseStatus.responseError,
-          response: response,
-          error: response.message,
-        );
-      } else {
-        return ResponseModel<T>(
-          status: ResponseStatus.success,
-          response: response,
-        );
-      }
-    } else {
-      return ResponseModel(
-        status: ResponseStatus.nullResponse,
-        error: apiResponse.data['message'] as String,
-      );
     }
   }
 }
