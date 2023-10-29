@@ -19,7 +19,7 @@ class Validator {
     if (password.isEmpty) {
       return 'Please enter Password';
     }
-    if (GetUtils.isLengthGreaterThan(password, 8)) {
+    if (GetUtils.isLengthLessThan(password, 8)) {
       return 'Password length should be atleast 8 characters';
     }
     return null;
@@ -28,6 +28,13 @@ class Validator {
   String? validateFullname(String fullname) {
     if (fullname.isEmpty) {
       return 'Please enter Full Name';
+    }
+    return null;
+  }
+
+  String? validateEmpty(String fullname) {
+    if (fullname.isEmpty) {
+      return 'Field cannot be empty';
     }
     return null;
   }
@@ -84,15 +91,15 @@ class Validator {
   //   return null;
   // }
 
-  String? validatePhoneNumber(String mobile) {
-    if (mobile.isEmpty) {
-      return 'Please enter Mobile Number';
-    }
-    if (mobile.length < 10) {
-      return 'Invalid Mobile Number';
-    }
-    return null;
-  }
+  // String? validatePhoneNumber(String mobile) {
+  //   if (mobile.isEmpty) {
+  //     return 'Please enter Mobile Number';
+  //   }
+  //   if (mobile.length < 10) {
+  //     return 'Invalid Mobile Number';
+  //   }
+  //   return null;
+  // }
 
   /* 
   If the email address is empty, return an error message. If the email address is not empty, check if
@@ -116,6 +123,11 @@ class Validator {
     if (!emailValid) {
       return 'Please enter valid Email Address';
     }
+    return null;
+  }
+
+  String? validatePhoneNumber(String phoneNumber) {
+    if (!GetUtils.isPhoneNumber(phoneNumber)) return 'Invalid phone format';
     return null;
   }
 
