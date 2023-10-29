@@ -7,11 +7,12 @@ import '../../models/reset_password/reset_pass_request_model.dart';
 import '../../models/sign_in/sign_in_request_model.dart';
 import '../../models/sign_up/sign_in_request_model.dart';
 import '../../models/verify_otp/verify_otp_request_model.dart';
+import '../dio_service/dio_builder.dart';
 
 class AuthService {
   Future<dynamic> signUpUser(SignUpRequest requestModel) async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       signUpApiConstant,
       options: dioBuilderResponse.dioOptions,
@@ -22,7 +23,7 @@ class AuthService {
 
   Future<dynamic> resetPassword(ResetPasswordRequest requestModel) async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       resetApiConstant,
       options: dioBuilderResponse.dioOptions,
@@ -36,7 +37,7 @@ class AuthService {
     bool isSocial = false,
   }) async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       isSocial ? socialSignInApiConstant : signInApiConstant,
       options: dioBuilderResponse.dioOptions,
@@ -47,7 +48,7 @@ class AuthService {
 
   Future<dynamic> guestSignIn() async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       registerGuestUser,
       options: dioBuilderResponse.dioOptions,
@@ -57,7 +58,7 @@ class AuthService {
 
   Future<dynamic> verifyOtp(OtpRequest requestModel) async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       verifyOtpApiConstant,
       options: dioBuilderResponse.dioOptions,
@@ -68,7 +69,7 @@ class AuthService {
 
   Future<dynamic> sendOtp(ResendOtpRequest requestModel) async {
     final DioBuilderResponse dioBuilderResponse =
-        await DioBuilder().buildNonCachedDio(passDomain: true);
+        await DioBuilder().buildNonCachedDio();
     final Response response = await dioBuilderResponse.dio.post(
       resendOtpApiConstant,
       options: dioBuilderResponse.dioOptions,

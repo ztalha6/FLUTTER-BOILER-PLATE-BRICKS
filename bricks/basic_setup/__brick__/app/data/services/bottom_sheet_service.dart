@@ -2,7 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sizer/sizer.dart';
+
+import 'dialog_service.dart';
 
 class BottomSheetService {
   static final BottomSheetService _singleton = BottomSheetService._internal();

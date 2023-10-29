@@ -78,47 +78,47 @@ class AppTheme {
           ),
         ),
         textTheme: TextTheme(
-          displayLarge: GoogleFonts.sourceSansPro(
+          displayLarge: GoogleFonts.sourceSans3(
             fontSize: 26,
             fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
-          titleMedium: GoogleFonts.sourceSansPro(
+          titleMedium: GoogleFonts.sourceSans3(
             fontSize: 14,
             fontWeight: FontWeight.normal,
             color: Colors.black,
           ),
-          displayMedium: GoogleFonts.sourceSansPro(
+          displayMedium: GoogleFonts.sourceSans3(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-          titleSmall: GoogleFonts.sourceSansPro(
+          titleSmall: GoogleFonts.sourceSans3(
             fontSize: 12,
             fontWeight: FontWeight.w400,
             color: Color(0xFF4E4E4E),
           ),
-          displaySmall: GoogleFonts.sourceSansPro(
+          displaySmall: GoogleFonts.sourceSans3(
             fontSize: 14,
             fontWeight: FontWeight.w500,
             color: Colors.black,
           ),
-          headlineMedium: GoogleFonts.sourceSansPro(
+          headlineMedium: GoogleFonts.sourceSans3(
             fontSize: 14,
             fontWeight: FontWeight.w400,
             color: Colors.black,
           ),
-          bodyLarge: GoogleFonts.sourceSansPro(
+          bodyLarge: GoogleFonts.sourceSans3(
             fontSize: 12,
             fontWeight: FontWeight.normal,
             color: Colors.black,
           ),
-          bodyMedium: GoogleFonts.sourceSansPro(
+          bodyMedium: GoogleFonts.sourceSans3(
             fontSize: 16,
             fontWeight: FontWeight.w400,
             color: Colors.black54,
           ),
-          titleLarge: GoogleFonts.sourceSansPro(
+          titleLarge: GoogleFonts.sourceSans3(
             fontSize: 18,
             fontWeight: FontWeight.w600,
             color: Colors.black,

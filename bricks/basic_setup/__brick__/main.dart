@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'app/data/env/env.dart';
+import 'app/data/env/envs.dart';
+import 'app/data/widgets/base_widget.dart';
 import 'app/routes/app_pages.dart';
-import 'data/env/env.dart';
-import 'data/env/envs.dart';
-import 'data/widgets/base_widget.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../routes/app_pages.dart';
 import '../theme/app_theme.dart';
 
 final GlobalKey<ScaffoldMessengerState> rootScaffoldMessengerKey =

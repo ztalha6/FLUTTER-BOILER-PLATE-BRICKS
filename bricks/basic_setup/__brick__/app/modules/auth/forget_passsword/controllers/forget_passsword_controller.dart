@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 
 import '../../../../data/env/env.dart';
 import '../../../../data/services/validator_service.dart';
+import '../../../../routes/app_pages.dart';
 
 class ForgetPassswordController extends GetxController {
   TextEditingController emailController = TextEditingController();

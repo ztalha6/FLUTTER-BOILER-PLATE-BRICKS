@@ -2,10 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
-
 import '../../../../data/constants/configuration.dart';
 import '../../../../data/env/env.dart';
+import '../../../../routes/app_pages.dart';
 import '../../create_password/views/create_password_view.dart';
 
 class VerifyOtpController extends GetxController {

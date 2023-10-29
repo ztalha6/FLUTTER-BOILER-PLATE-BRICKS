@@ -33,14 +33,6 @@ class Utils {
     }
   }
 
-  void clearKeyboardFocus() {
-    FocusScope.of(Get.context!).requestFocus(FocusNode());
-  }
-
-  bool isNotNull(dynamic object) {
-    return object != null;
-  }
-
   String convertServerTimeToLocalTime(
     String serverTime, {
     bool getDateOnly = false,

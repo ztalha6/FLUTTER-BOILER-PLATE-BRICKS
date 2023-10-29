@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 
 import '../../env/env.dart';
+import '../token_manager.dart';
 import 'api_interceptor.dart';
 
 class DioBuilderResponse {

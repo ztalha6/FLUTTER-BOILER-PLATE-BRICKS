@@ -5,15 +5,13 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/data/constants/assets_constants.dart';
-
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
-
 import 'package:sizer/sizer.dart';
 
 import '../../../../data/widgets/custom_expandable_appbar.dart';
 import '../../../../data/widgets/custom_text_form_field.dart';
 import '../../../../data/widgets/primary_button.dart';
+import '../../../../routes/app_pages.dart';
+import '../../../../data/constants/assets_constants.dart';
 import '../controllers/sign_in_controller.dart';
 
 class SignInView extends GetView<SignInController> {
