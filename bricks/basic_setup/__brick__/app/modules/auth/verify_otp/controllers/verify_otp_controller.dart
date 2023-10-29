@@ -64,7 +64,7 @@ class VerifyOtpController extends GetxController {
     // await AuthRepository().verifyOtp(otpController.text);
     if (response) {
       if (fromSignUp) {
-        Get.offAllNamed(Routes.POST_SIGN_UP);
+        Get.offAllNamed(Routes.VERIFY_OTP);
       } else if (fromSignIn) {
         Get.offAllNamed(Routes.HOME);
       } else {
