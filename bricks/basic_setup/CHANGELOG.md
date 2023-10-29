@@ -1,3 +1,7 @@
+# 3.0.1+7
+
+- Relative path errors resolved.
+
 # 3.0.0+6
 
 - Api parsers added
