@@ -1,20 +1,19 @@
 name: notification_service
-description: A new brick created with the Mason CLI.
+description: A brick to get the notification service with firebase messenging and flutter local notifications.
 
 # The following defines the brick repository url.
 # Uncomment and update the following line before publishing the brick.
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/ztalha6/FLUTTER-BOILER-PLATE-BRICKS/tree/master/bricks/notification_service
 
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 0.1.0+1
+version: 1.0.0+1
 
 # The following defines the environment for the current brick.
 # It includes the version of mason that the brick requires.
 environment:
   mason: ">=0.1.0-dev.51 <0.1.0"
-
 # Variables specify dynamic values that your brick depends on.
 # Zero or more variables can be specified for a given brick.
 # Each variable has:
@@ -25,9 +24,9 @@ environment:
 #  * an optional prompt phrase used when asking for the variable
 #  * a list of values (enums only)
 #  * an optional separator (list only)
-vars:
-  name:
-    type: string
-    description: Your name
-    default: Dash
-    prompt: What is your name?
+# vars:
+#   name:
+#     type: string
+#     description: Your name
+#     default: Dash
+#     prompt: What is your name?

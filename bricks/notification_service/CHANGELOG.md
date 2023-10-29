@@ -1,3 +1,4 @@
-# 0.1.0+1
+# 1.0.0+1
 
-- TODO: Describe initial release.
+- Notification Service added.
+- Local Notification Service added.
