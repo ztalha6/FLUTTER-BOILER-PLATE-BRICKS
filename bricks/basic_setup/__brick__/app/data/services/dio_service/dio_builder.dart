@@ -14,7 +14,6 @@ class DioBuilderResponse {
 final CacheOptions cacheOptions = CacheOptions(
   // A default store is required for interceptor.
   store: MemCacheStore(),
-  policy: CachePolicy.refreshForceCache,
   priority: CachePriority.high,
   // Returns a cached response on error but for statuses 401 & 403.
   // Also allows to return a cached response on network errors (e.g. offline usage).
@@ -34,7 +33,13 @@ class DioBuilder {
     bool hasAuth = true,
     bool shouldQueue = false,
     bool passDomain = false,
+    bool useAccessToken = false,
+    String accessToken = '',
   }) async {
+    if (useAccessToken) {
+      assert(accessToken.isNotEmpty);
+    }
+
     final DioCacheInterceptor dioCacheManager =
         DioCacheInterceptor(options: cacheOptions);
     final Options dioOptions = cacheOptions.toOptions();
@@ -44,14 +49,11 @@ class DioBuilder {
         baseUrl: Env.currentEnv.baseUrl,
         connectTimeout: const Duration(milliseconds: 15000),
         receiveTimeout: const Duration(milliseconds: 15000),
-        headers: hasAuth
-            ? {
-                'Authorization': 'Bearer $token',
-                'Content-Type': 'application/json',
-              }
-            : {
-                'Content-Type': 'application/json',
-              },
+        headers: {
+          if (hasAuth) 'Authorization': token,
+          'Content-Type': 'application/json',
+          if (useAccessToken) 'AccessToken': accessToken,
+        },
       ),
     );
     dio.interceptors.add(DioInterceptor(dio));
@@ -63,23 +65,34 @@ class DioBuilder {
   Future<DioBuilderResponse> buildNonCachedDio({
     bool hasAuth = false,
     bool shouldQueue = false,
-    bool passDomain = false,
+    bool useAccessToken = false,
+    bool isFromData = false,
+    bool useXAccessToken = false,
+    String xAccessToken = '',
+    String accessToken = '',
+    bool sendRequestWithBaseUrl = true,
   }) async {
+    if (useXAccessToken) {
+      assert(xAccessToken.isNotEmpty);
+    }
+    if (useAccessToken) {
+      assert(accessToken.isNotEmpty);
+    }
+
     final Options dioOptions = _getDioOptions();
     final String token = await TokenManager().getToken();
     final Dio dio = Dio(
       BaseOptions(
-        baseUrl: Env.currentEnv.baseUrl,
+        baseUrl: sendRequestWithBaseUrl ? Env.currentEnv.baseUrl : '',
         connectTimeout: const Duration(milliseconds: 15000),
         receiveTimeout: const Duration(milliseconds: 15000),
-        headers: hasAuth
-            ? {
-                'Authorization': 'Bearer $token',
-                'Content-Type': 'application/json',
-              }
-            : {
-                'Content-Type': 'application/json',
-              },
+        headers: {
+          if (hasAuth) 'Authorization': token,
+          'Content-Type':
+              isFromData ? 'multipart/form-data' : 'application/json',
+          if (useAccessToken) 'AccessToken': accessToken,
+          if (useXAccessToken) 'x-access-token': xAccessToken,
+        },
       ),
     );
     dio.interceptors.add(DioInterceptor(dio));
