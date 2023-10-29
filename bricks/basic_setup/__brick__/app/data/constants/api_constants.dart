@@ -6,3 +6,4 @@ const resendOtpApiConstant = 'resend-otp';
 const changePasswordApiConstant = 'change-password';
 const socialSignInApiConstant = 'social-login';
 const signInApiConstant = 'login';
+const registerGcuestUser = 'login';

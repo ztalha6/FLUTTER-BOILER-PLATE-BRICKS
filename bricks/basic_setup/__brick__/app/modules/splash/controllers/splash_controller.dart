@@ -1,9 +1,10 @@
 import 'package:get/get.dart';
 
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../data/constants/configuration.dart';
+import '../../../routes/app_pages.dart';
+import '../../../data/services/app_service.dart';
 
 class SplashController extends GetxController {
   Configuration configs = Configuration();

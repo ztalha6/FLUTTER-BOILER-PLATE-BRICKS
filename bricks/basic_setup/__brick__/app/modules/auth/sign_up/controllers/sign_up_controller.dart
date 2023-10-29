@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 
 import '../../../../data/constants/configuration.dart';
 import '../../../../data/env/env.dart';
 import '../../../../data/services/validator_service.dart';
 import '../../../../data/utils/utils.dart';
+import '../../../../routes/app_pages.dart';
 
 class SignUpController extends GetxController {
   Configuration configs = Configuration();

@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/data/constants/assets_constants.dart';
 import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 
+import '../../../../data/constants/assets_constants.dart';
 import '../../../../data/widgets/primary_button.dart';
+import '../../../../routes/app_pages.dart';
 import '../controllers/onboarding_controller.dart';
 
 class OnboardingView extends GetView<OnboardingController> {

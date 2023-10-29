@@ -2,7 +2,6 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 
 import 'package:sizer/sizer.dart';
 
@@ -10,6 +9,7 @@ import '../../../../data/widgets/custom_expandable_appbar.dart';
 import '../../../../data/widgets/custom_phone_field.dart';
 import '../../../../data/widgets/custom_text_form_field.dart';
 import '../../../../data/widgets/primary_button.dart';
+import '../../../../routes/app_pages.dart';
 import '../controllers/sign_up_controller.dart';
 
 class SignUpView extends GetView<SignUpController> {

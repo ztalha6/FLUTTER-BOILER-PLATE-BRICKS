@@ -4,13 +4,13 @@ import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 import '../../../../data/constants/configuration.dart';
 import '../../../../data/env/env.dart';
 import '../../../../data/services/validator_service.dart';
 import '../../../../data/utils/utils.dart';
+import '../../../../routes/app_pages.dart';
 
 class SignInController extends GetxController {
   Configuration configs = Configuration();

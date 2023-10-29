@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
-import 'package:{{#pascalCase}}{{projectName}}{{/pascalCase}}/app/routes/app_pages.dart';
+
+import '../../../../routes/app_pages.dart';
 
 class PostSignUpController extends GetxController {
   RxBool isLoading = false.obs;
