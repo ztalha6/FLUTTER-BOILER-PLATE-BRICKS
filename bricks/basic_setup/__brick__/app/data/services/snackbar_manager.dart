@@ -13,41 +13,45 @@ class SnackbarManager {
       messageText: Row(
         children: [
           Expanded(
-              child: Text(
-            message,
-            style: TextStyle(
-              fontSize: 12,
-              fontFamily: 'Gotham',
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
+            child: Text(
+              message,
+              style: const TextStyle(
+                fontSize: 12,
+                fontFamily: 'Gotham',
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+              ),
             ),
-          )),
+          ),
         ],
       ),
       duration: const Duration(seconds: 2),
     );
   }
 
-  void showAlertSnackbar(String message,
-      {String? buttonText, void Function()? buttonOnPressed}) {
+  void showAlertSnackbar(
+    String message, {
+    String? buttonText,
+    void Function()? buttonOnPressed,
+  }) {
     Get.snackbar(
       '',
       '',
-      backgroundColor: Color(0xffFF5C5C),
+      backgroundColor: const Color(0xffFF5C5C),
       titleText: Container(),
-      borderRadius: 0,
       messageText: Row(
         children: [
           Expanded(
-              child: Text(
-            message,
-            style: TextStyle(
-              fontSize: 12,
-              fontFamily: 'Gotham',
-              fontWeight: FontWeight.w400,
-              color: Colors.white,
+            child: Text(
+              message,
+              style: const TextStyle(
+                fontSize: 12,
+                fontFamily: 'Gotham',
+                fontWeight: FontWeight.w400,
+                color: Colors.white,
+              ),
             ),
-          )),
+          ),
         ],
       ),
       mainButton: buttonText != null
@@ -60,13 +64,16 @@ class SnackbarManager {
     );
   }
 
-  void showInfoSnackbar(String message,
-      {String? buttonText, void Function()? buttonOnPressed}) {
+  void showInfoSnackbar(
+    String message, {
+    String? buttonText,
+    void Function()? buttonOnPressed,
+  }) {
     Get.snackbar(
       '',
       '',
       boxShadows: [
-        const BoxShadow(color: Colors.black, spreadRadius: 10, blurRadius: 100),
+        const BoxShadow(spreadRadius: 10, blurRadius: 100),
       ],
       backgroundColor: Colors.white,
       titleText: Container(),
