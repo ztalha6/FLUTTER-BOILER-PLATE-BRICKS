@@ -44,5 +44,6 @@ You have to add them in your pubspec.ymal under dependencies:
 
   firebase_messaging: ^14.6.4
   flutter_local_notifications: ^15.0.0
+  firebase_core: ^2.14.0
 
 ```
