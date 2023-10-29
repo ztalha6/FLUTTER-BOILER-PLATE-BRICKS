@@ -1,3 +1,7 @@
+# 3.0.2+9
+
+- Email field added in user model
+
 # 3.0.2+8
 
 - Relative path errors resolved.
