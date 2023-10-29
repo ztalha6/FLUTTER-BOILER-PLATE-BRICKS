@@ -19,13 +19,14 @@ class CustomTextFormField extends StatefulWidget {
     this.keyboardType,
     this.textInputAction,
     this.focusNode,
-    this.maxLength,
+    this.maxLength = 255,
     this.maxLines = 1,
     this.inputFormatters,
     this.label,
     this.enabled = true,
     this.isMandatory = false,
     this.suffixIcon,
+    this.autofocus = false,
     this.validator,
     this.onSaved,
   }) : super(key: key);
@@ -50,6 +51,7 @@ class CustomTextFormField extends StatefulWidget {
   final bool isMandatory;
   final Widget? suffixIcon;
   final Widget? perfixIcon;
+  final bool autofocus;
   final List<TextInputFormatter>? inputFormatters;
   final String? Function(String?)? validator;
   @override
@@ -105,6 +107,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           ),
         SizedBox(height: 1.5.h),
         TextFormField(
+          autofocus: widget.autofocus,
           enabled: widget.enabled,
           validator: widget.validator,
           style: Theme.of(context)
@@ -125,8 +128,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           maxLines: widget.maxLines,
           onSaved: widget.onSaved,
           decoration: InputDecoration(
-            contentPadding:
-                widget.reduceContentPadding ? EdgeInsets.zero : null,
+            counterText: "",
+            contentPadding: widget.reduceContentPadding
+                ? const EdgeInsets.symmetric(horizontal: 16)
+                : null,
             filled: true,
             fillColor: widget.errorText != null
                 ? Colors.red.withOpacity(0.1)
@@ -139,7 +144,10 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             floatingLabelStyle: Theme.of(context).textTheme.headlineMedium,
             // label: widget.label == null ? null : Text(widget.label!),
             hintText: widget.hintText,
-            hintStyle: Theme.of(context).textTheme.headlineMedium,
+            hintStyle: Theme.of(context)
+                .textTheme
+                .headlineMedium!
+                .copyWith(color: Colors.grey),
             border: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.grey),
               borderRadius: BorderRadius.circular(15.0),
@@ -151,6 +159,9 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               borderRadius: BorderRadius.circular(15.0),
             ),
             errorText: widget.errorText,
+            errorStyle: TextStyle(
+              color: Theme.of(context).colorScheme.error, // or any other color
+            ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(15.0),
               borderSide: const BorderSide(

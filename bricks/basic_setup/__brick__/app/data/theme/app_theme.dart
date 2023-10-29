@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sizer/sizer.dart';
 
-import '../configuration.dart';
+import '../constants/configuration.dart';
 
 class AppTheme {
   Configuration configs = Configuration();
@@ -27,7 +27,7 @@ class AppTheme {
         brightness: Brightness.light,
         primaryColor: configs.primaryColor,
         disabledColor: const Color(0xffADAFB2),
-        scaffoldBackgroundColor: const Color(0xFFF5F5F5),
+        scaffoldBackgroundColor: const Color(0xFFE5E5E5),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
@@ -78,49 +78,49 @@ class AppTheme {
           ),
         ),
         textTheme: TextTheme(
-          displayLarge: GoogleFonts.inter(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
+          displayLarge: GoogleFonts.sourceSansPro(
+            fontSize: 26,
+            fontWeight: FontWeight.w700,
             color: Colors.black,
           ),
-          titleMedium: GoogleFonts.inter(
+          titleMedium: GoogleFonts.sourceSansPro(
             fontSize: 14,
             fontWeight: FontWeight.normal,
             color: Colors.black,
           ),
-          displayMedium: GoogleFonts.inter(
+          displayMedium: GoogleFonts.sourceSansPro(
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-          titleSmall: GoogleFonts.inter(
+          titleSmall: GoogleFonts.sourceSansPro(
             fontSize: 12,
-            fontWeight: FontWeight.w300,
-            color: const Color(0xffADAFB2),
+            fontWeight: FontWeight.w400,
+            color: Color(0xFF4E4E4E),
           ),
-          displaySmall: GoogleFonts.inter(
+          displaySmall: GoogleFonts.sourceSansPro(
             fontSize: 14,
             fontWeight: FontWeight.w500,
             color: Colors.black,
           ),
-          headlineMedium: GoogleFonts.inter(
+          headlineMedium: GoogleFonts.sourceSansPro(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: const Color(0xff646C7C),
+            color: Colors.black,
           ),
-          bodyLarge: GoogleFonts.inter(
+          bodyLarge: GoogleFonts.sourceSansPro(
             fontSize: 12,
             fontWeight: FontWeight.normal,
             color: Colors.black,
           ),
-          bodyMedium: GoogleFonts.inter(
-            fontSize: 14,
-            fontWeight: FontWeight.normal,
+          bodyMedium: GoogleFonts.sourceSansPro(
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
             color: Colors.black54,
           ),
-          titleLarge: GoogleFonts.inter(
-            fontSize: 24,
-            fontWeight: FontWeight.w700,
+          titleLarge: GoogleFonts.sourceSansPro(
+            fontSize: 18,
+            fontWeight: FontWeight.w600,
             color: Colors.black,
           ),
         ),
