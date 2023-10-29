@@ -4,7 +4,7 @@ description: A brick to create the basic structure for the API Integration and B
 # The following defines the version and build number for your brick.
 # A version number is three numbers separated by dots, like 1.2.34
 # followed by an optional build number (separated by a +).
-version: 3.0.1+7
+version: 3.0.2+8
 repository: https://github.com/ztalha6/FLUTTER-BOILER-PLATE-BRICKS/tree/master/bricks/basic_setup
 
 # The following defines the environment for the current brick.

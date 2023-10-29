@@ -1,3 +1,8 @@
+# 3.0.2+8
+
+- Relative path errors resolved.
+- Readme updated.
+
 # 3.0.1+7
 
 - Relative path errors resolved.
